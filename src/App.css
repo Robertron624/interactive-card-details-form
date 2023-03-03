@@ -1,0 +1,11 @@
+#root {
+  text-align: center;
+}
+
+.app {
+  width: 65%;
+  height: 100vh;
+  background: white;
+  float: right;
+  color: black;
+}
