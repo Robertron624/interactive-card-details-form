@@ -1,0 +1,58 @@
+.cards-container {
+    position: absolute;
+    left: -13.5rem;
+}
+
+.back-card img,
+.frontal-card img{
+    width: 18.5rem;
+}
+
+.frontal-card {
+    position: relative;
+}
+
+.frontal-card .frontal-content {
+    position: absolute;
+    color: white;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-evenly;
+    padding-left: 1rem;
+}
+
+.frontal-card .card-logo {
+    width: 3rem;
+}
+
+.frontal-content .card-number {
+    font-size: 23px;
+}
+
+.card-numbers {
+    flex-direction: column;
+    gap: .7rem;
+}
+
+.card-name-cvc {
+    justify-content: space-between;
+    font-size: 12px;
+    text-transform: uppercase;
+}
+
+
+.back-card {
+    margin-left: 23%;
+    margin-top: 5%;
+    position: relative;
+}
+
+.back-card span {
+    position: absolute;
+    top: 40%;
+    right: -13%;
+}

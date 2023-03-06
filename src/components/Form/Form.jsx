@@ -1,20 +1,24 @@
 import React, { useState } from "react";
 import "./index.css";
 
-const Form = () => {
-    const [cardInfo, setCardInfo] = useState({});
+const Form = ({cardInfo, setCardInfo}) => {
 
-    function formSubmit(e) {}
+    const { cardNumber, cardholderName, expMonth, expYear, cvc } = cardInfo;
+
+    function formSubmit(e) {
+        e.preventDefault();
+    }
 
     return (
         <div className="form-container">
-            <form action="">
+            <form action="" onSubmit={formSubmit}>
                 <label htmlFor="cardholder-name">
                     CARDHOLDER NAME
                     <input
                         type="text"
                         name="cardholder-name"
                         placeholder="e.g. Jane Appleseed"
+                        required
                     />
                 </label>
                 <label htmlFor="card-number">
@@ -23,6 +27,7 @@ const Form = () => {
                         type="text"
                         placeholder="e.g. 1234 5678 9123 0000"
                         name="card-number"
+                        required
                     />
                 </label>
                 <div className="card-additional-info">
@@ -34,12 +39,14 @@ const Form = () => {
                                 placeholder="MM"
                                 name="month"
                                 id="month"
+                                required
                             />
                             <input
                                 type="number"
                                 placeholder="YY"
                                 name="month"
                                 id="year"
+                                required
                             />
                         </div>
                     </div>
@@ -50,6 +57,8 @@ const Form = () => {
                             placeholder="e.g. 123"
                             name="cvc"
                             id="cvc"
+                            maxLength={3}
+                            required
                         />
                     </div>
                 </div>
