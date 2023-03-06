@@ -1,0 +1,70 @@
+.form-container {
+    width: 37%;
+    min-width: 5rem;
+
+    --white: hsl(0, 0%, 100%);
+    --light-grayish-violet: hsl(270, 3%, 87%);
+    --dark-grayish-violet: hsl(279, 6%, 55%);
+    --very-dark-violet: hsl(278, 68%, 11%);
+}
+
+.flex {
+    display: flex;
+}
+
+form,
+label {
+    display: flex;
+    flex-direction: column;
+}
+
+form {
+    gap: 1rem;
+    text-align: left;
+}
+
+form label {
+    font-size: 12px;
+}
+
+form input {
+    padding: .5rem 10px;
+    background-color: var(--white);
+    border-color: var(--light-grayish-violet);
+    border-radius: 5px;
+}
+
+button {
+    margin: 0 auto;
+    border-radius: 5px;
+    width: 100%;
+    background: var(--very-dark-violet);
+    padding: 1rem ;
+    font-family: 'Space Grotesk', sans-serif;
+    cursor: pointer;
+}
+
+.card-additional-info {
+    display: flex;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+}
+
+.card-additional-info input {
+    height: 1rem;
+}
+
+.card-additional-info label[for="exp-date"] {
+    display: flex;;
+}
+
+.exp-date-inputs {
+    flex-direction: column;
+}
+.exp-date-inputs .inputs{
+    gap: 1rem;
+}
+
+.exp-date-inputs .inputs input {
+    width: 3rem;
+}
