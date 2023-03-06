@@ -2,10 +2,18 @@
     width: 37%;
     min-width: 5rem;
 
+    --red: hsl(0, 100%, 66%);
+
     --white: hsl(0, 0%, 100%);
     --light-grayish-violet: hsl(270, 3%, 87%);
     --dark-grayish-violet: hsl(279, 6%, 55%);
     --very-dark-violet: hsl(278, 68%, 11%);
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
 }
 
 .flex {
@@ -34,6 +42,16 @@ form input {
     border-radius: 5px;
 }
 
+form input::placeholder {
+    color: var(--light-grayish-violet);
+    font-weight: 500;
+    font-family: 'Space Grotesk';
+}
+
+form input:focus {
+    border-color: var(--very-dark-violet);
+}
+
 button {
     margin: 0 auto;
     border-radius: 5px;
@@ -47,7 +65,8 @@ button {
 .card-additional-info {
     display: flex;
     gap: 1.5rem;
-    flex-wrap: wrap;
+    justify-content: space-between;
+    /* flex-wrap: wrap; */
 }
 
 .card-additional-info input {
@@ -67,4 +86,25 @@ button {
 
 .exp-date-inputs .inputs input {
     width: 3rem;
+}
+
+.cvc-inputs {
+    display: flex;
+    flex-direction: column;
+}
+
+.cvc-inputs input {
+    width: 9rem;
+}
+
+
+/* Errors */
+
+.number-error {
+    font-size: 10px;
+    color: var(--red);
+}
+
+.border-error {
+    border-color: var(--red);
 }
