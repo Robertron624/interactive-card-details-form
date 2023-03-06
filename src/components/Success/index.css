@@ -1,0 +1,21 @@
+.success-container {
+    --light-grayish-violet: hsl(270, 3%, 87%);
+    --dark-grayish-violet: hsl(279, 6%, 55%);
+
+    width: 56%;
+    max-width: 23rem;
+}
+
+.success-container h1 {
+    margin-bottom: .7rem;
+}
+
+.success-container p {
+    font-size: .875rem;
+    color: var(--dark-grayish-violet);
+    margin-bottom: 2rem;
+}
+
+.success-container button {
+    padding: 0.7rem 1rem;
+}

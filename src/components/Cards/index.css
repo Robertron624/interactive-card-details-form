@@ -55,7 +55,8 @@
 
 .back-card span {
     position: absolute;
-    top: 40%;
+    top: 42%;
     right: -13%;
     color: white;
+    font-size: 12px;
 }

@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "./index.css";
 
-const Form = ({cardInfo, setCardInfo}) => {
+const Form = ({cardInfo, setCardInfo, setFormSubmitted}) => {
 
     const { cardNumber, cardholderName, expMonth, expYear, cvc } = cardInfo;
     const [ cardNumberError, setCardNumberError] = useState("")
@@ -16,6 +16,8 @@ const Form = ({cardInfo, setCardInfo}) => {
     function formSubmit(e) {
         e.preventDefault();
 
+        let isCardNumberNaN = isNaN(cardNumber?.split(" ").join(""))
+
         if(!cardholderName) {
             setCardHolderNameError(BLANK_ERROR)
         }
@@ -24,7 +26,7 @@ const Form = ({cardInfo, setCardInfo}) => {
             setCardNumberError(BLANK_ERROR)
         }
 
-        if(isNaN(cardNumber?.split(" ").join(""))){
+        if(isCardNumberNaN){
             setCardNumberError("Wrong format, numbers only")
         }
 
@@ -43,6 +45,9 @@ const Form = ({cardInfo, setCardInfo}) => {
             setCvcError(BLANK_ERROR);
         }
 
+        if(cardholderName && cardNumber && expMonth && expYear && cvc && !isCardNumberNaN){
+            setFormSubmitted(true)
+        }
 
     }
 
