@@ -9,24 +9,44 @@ const Form = ({cardInfo, setCardInfo}) => {
         e.preventDefault();
     }
 
+    const handleChange = (e) => {
+
+        let inputName = e.target.name
+
+        let inputValue = e.target.value
+
+        // Adds a white space every 4 characters
+        if(inputName == 'cardNumber'){
+            inputValue = inputValue.match(/.{1,4}/g);
+            inputValue = inputValue?.join(' ')
+        }
+
+        setCardInfo({
+            ...cardInfo,
+            [inputName]: inputValue
+        })
+    }
+
     return (
         <div className="form-container">
             <form action="" onSubmit={formSubmit}>
-                <label htmlFor="cardholder-name">
+                <label htmlFor="cardholderName">
                     CARDHOLDER NAME
                     <input
                         type="text"
-                        name="cardholder-name"
+                        name="cardholderName"
                         placeholder="e.g. Jane Appleseed"
+                        onChange={handleChange}
                         required
                     />
                 </label>
-                <label htmlFor="card-number">
+                <label htmlFor="cardNumber">
                     CARD NUMBER
                     <input
                         type="text"
                         placeholder="e.g. 1234 5678 9123 0000"
-                        name="card-number"
+                        name="cardNumber"
+                        onChange={handleChange}
                         required
                     />
                 </label>
@@ -37,15 +57,17 @@ const Form = ({cardInfo, setCardInfo}) => {
                             <input
                                 type="number"
                                 placeholder="MM"
-                                name="month"
+                                name="expMonth"
                                 id="month"
+                                onChange={handleChange}
                                 required
                             />
                             <input
                                 type="number"
                                 placeholder="YY"
-                                name="month"
+                                name="expYear"
                                 id="year"
+                                onChange={handleChange}
                                 required
                             />
                         </div>
@@ -58,6 +80,7 @@ const Form = ({cardInfo, setCardInfo}) => {
                             name="cvc"
                             id="cvc"
                             maxLength={3}
+                            onChange={handleChange}
                             required
                         />
                     </div>

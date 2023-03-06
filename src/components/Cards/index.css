@@ -36,6 +36,8 @@
 .card-numbers {
     flex-direction: column;
     gap: .7rem;
+    width: 87%;
+    text-align: left;
 }
 
 .card-name-cvc {
