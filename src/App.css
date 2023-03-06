@@ -8,4 +8,6 @@
   background: white;
   float: right;
   color: black;
+  display: flex;
+  align-items: center;
 }

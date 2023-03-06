@@ -22,7 +22,7 @@ p{
 body {
   min-height: 100vh;
   margin: 0;
-  background-image: url(/public/bg-main-desktop.png);
+  background-image: url(/bg-main-desktop.png);
   background-repeat: no-repeat;
   background-size: cover;
 }
