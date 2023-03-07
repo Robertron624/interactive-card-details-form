@@ -108,3 +108,21 @@ button {
 .border-error {
     border-color: var(--red);
 }
+
+
+@media screen and (max-width: 376px){
+
+    .form-container {
+        position: absolute;
+        width: 86%;
+    }
+
+    .cvc-inputs input {
+        width: auto;
+        max-width: 7rem;
+    }
+
+    .form-container input {
+        margin-top: .5rem;
+    }
+}

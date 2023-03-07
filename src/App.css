@@ -29,3 +29,12 @@
 input {
   color: black;
 }
+
+@media screen and (max-width: 768px){
+  .app {
+    height: 64vh;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+  }
+}
