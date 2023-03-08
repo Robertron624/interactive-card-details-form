@@ -31,12 +31,14 @@ Users should be able to:
 - See hover, active, and focus states for interactive elements on the page
 
 ### Screenshot
+![image](https://user-images.githubusercontent.com/72587880/223539565-1d42c915-ea3a-4db9-9d0e-1f56c3062263.png)
+![image](https://user-images.githubusercontent.com/72587880/223539615-b02d3bae-b9b3-42bf-9435-9e34ef73330c.png)
 
 
 ### Links
 
-- Solution URL: [Solution URL here](https://github.com/Robertron624/interactive-card-details-form)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Solution URL: [Solution URL](https://github.com/Robertron624/interactive-card-details-form)
+- Live Site URL: [Live site URL](https://magical-blini-ab1b78.netlify.app/)
 
 ## My process
 
@@ -47,7 +49,7 @@ Users should be able to:
 - Flexbox
 - Mobile-first workflow
 - [React](https://reactjs.org/) - JS library
-- [ Vite ](https://vitejs.dev/) - Build tool  
+- [Vite](https://vitejs.dev/) - Build tool  
 
 
 ### What I learned
