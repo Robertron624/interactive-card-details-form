@@ -66,7 +66,7 @@ button {
     display: flex;
     gap: 1.5rem;
     justify-content: space-between;
-    /* flex-wrap: wrap; */
+    flex-wrap: wrap;
 }
 
 .card-additional-info input {
@@ -94,7 +94,7 @@ button {
 }
 
 .cvc-inputs input {
-    width: 9rem;
+    width: 5rem;
 }
 
 
