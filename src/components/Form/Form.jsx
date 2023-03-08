@@ -12,9 +12,31 @@ const Form = ({ cardInfo, setCardInfo, setFormSubmitted }) => {
 
     const MAX_CVC = 3;
     const MAX_EXPIRE_DATE = 2;
-    const MAX_CARD_CHARACTERS = 19
+    const MAX_CARD_CHARACTERS = 19;
 
     const BLANK_ERROR = "Can't be blank";
+
+    function addInputSpace(e) {
+        if(e){
+            return Array.from(e).reduce((acc, t, i) => {
+                if (i > 0 && i % 4 == 0) acc += " ";
+                acc += t;
+                return acc;
+            });
+        }
+    }
+
+    const CreditOnInput = (_) => {
+
+        let current = event.target.value.replaceAll(" ","")
+
+        if(!current == ''){
+            event.target.value = addInputSpace(current)
+        }
+        else {
+            event.target.value = ''
+        }
+    };
 
     function formSubmit(e) {
         e.preventDefault();
@@ -22,7 +44,8 @@ const Form = ({ cardInfo, setCardInfo, setFormSubmitted }) => {
         const isCvcTooLong = cardInfo.cvc.length > MAX_CVC;
         const isMonthTooLong = cardInfo.expMonth.length > MAX_EXPIRE_DATE;
         const isYearTooLong = cardInfo.expYear.length > MAX_EXPIRE_DATE;
-        const isCardNumberTooLoong = cardInfo.cardNumber.length > MAX_CARD_CHARACTERS
+        const isCardNumberTooLoong =
+            cardInfo.cardNumber.length > MAX_CARD_CHARACTERS;
 
         let isCardNumberNaN = isNaN(cardNumber?.split(" ").join(""));
 
@@ -82,11 +105,7 @@ const Form = ({ cardInfo, setCardInfo, setFormSubmitted }) => {
         let inputName = e.target.name;
         let inputValue = e.target.value;
 
-        // Adds a white space every 4 characters
         if (inputName == "cardNumber") {
-            inputValue = inputValue.match(/.{1,4}/g);
-            inputValue = inputValue?.join(" ");
-
             if (inputValue?.length > 19) {
                 setCardNumberError("Card numbers must be only 16 characters");
                 return;
@@ -125,6 +144,7 @@ const Form = ({ cardInfo, setCardInfo, setFormSubmitted }) => {
                         type="text"
                         placeholder="e.g. 1234 5678 9123 0000"
                         name="cardNumber"
+                        onInput={CreditOnInput}
                         // value={cardNumber} Does not work with current implementation of blank space every 4 characters
                         onChange={handleChange}
                         className={`${cardNumberError ? "border-error" : ""}`}
